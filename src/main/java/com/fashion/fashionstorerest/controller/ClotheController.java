@@ -29,6 +29,7 @@ public class ClotheController {
 
     //find single clothing by its id
     @GetMapping("pieceOfClothing/{id}")
+    @ResponseBody
     public Clothes getSingleCloth(@PathVariable("id") long id){
         return clotheService.getSinglePieceOfClothing(id);
     }
