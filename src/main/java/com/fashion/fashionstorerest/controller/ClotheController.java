@@ -5,6 +5,7 @@ import com.fashion.fashionstorerest.service.ClotheService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
@@ -25,5 +26,12 @@ public class ClotheController {
     public List<Clothes> findAllClothes(){
         return clotheService.getAllClothes();
     }
+
+    //find single clothing by its id
+    @GetMapping("pieceOfClothing/{id}")
+    public Clothes getSingleCloth(@PathVariable("id") long id){
+        return clotheService.getSinglePieceOfClothing(id);
+    }
+
 
 } //last

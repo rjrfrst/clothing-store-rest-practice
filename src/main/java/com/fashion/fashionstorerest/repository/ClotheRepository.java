@@ -18,8 +18,21 @@ public class ClotheRepository {
             new Clothes(4, "Skirt", 1, List.of("Spring", "Summer"))
     ));
 
-
+    //all clothes
     public List<Clothes> getAllClothes() {
         return clothes;
     }
+
+    //single cloth
+    public Clothes getSinglePieceOfClothing(long id){
+        //I want to check all the data and if it match return that data
+        for(Clothes cloth : clothes)
+        {
+            if(cloth.getId() == id);
+            return cloth;
+        }
+        //if it doesn't match return nothing
+        return null;
+    }
+
 } //last

@@ -20,5 +20,9 @@ public class ClotheService {
         return clotheRepository.getAllClothes();
     }
 
+    //get single clothing
+    public Clothes getSinglePieceOfClothing(long id){
+        return clotheRepository.getSinglePieceOfClothing(id);
+    }
 
 } //last
