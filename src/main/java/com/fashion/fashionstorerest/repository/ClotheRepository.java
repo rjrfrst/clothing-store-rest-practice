@@ -18,4 +18,8 @@ public class ClotheRepository {
             new Clothes(4, "Skirt", 1, List.of("Spring", "Summer"))
     ));
 
+
+    public List<Clothes> getAllClothes() {
+        return clothes;
+    }
 } //last
