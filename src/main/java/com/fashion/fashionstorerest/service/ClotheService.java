@@ -30,4 +30,9 @@ public class ClotheService {
         clotheRepository.addClothes(clothes);
     }
 
+    //update piece of clothing
+    public void updateClothing(Clothes clothes){
+        clotheRepository.updateClothing(clothes);
+    }
+
 } //last

@@ -40,6 +40,17 @@ public class ClotheRepository {
         return null;
     }
 
-
+    //update single clothing
+    public void updateClothing(Clothes updatedClothes){
+        //find clothes
+        for(Clothes clothes1 : clothes){
+            //manually search for each clothing
+            if(clothes1.getId() == updatedClothes.getId()){
+                clothes1.setClothingType(updatedClothes.getClothingType());
+                clothes1.setSize(updatedClothes.getSize());
+                clothes1.setSeason(updatedClothes.getSeason());
+            }
+        }
+    }
 
 } //last

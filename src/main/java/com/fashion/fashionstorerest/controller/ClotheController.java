@@ -41,4 +41,13 @@ public class ClotheController {
         return clotheService.getSinglePieceOfClothing(clothes.getId());
     }
 
+    //Change a piece of clothing
+    //Put request
+    @PutMapping("clothes")
+    @ResponseBody
+    public Clothes updateClothes(@RequestBody Clothes clothes){
+        clotheService.updateClothing(clothes);
+        return clotheService.getSinglePieceOfClothing(clothes.getId());
+    }
+
 } //last
