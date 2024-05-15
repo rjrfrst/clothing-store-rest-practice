@@ -53,4 +53,13 @@ public class ClotheRepository {
         }
     }
 
+    //delete clothing
+    public void deleteClothes(long id) {
+        //check inside a loop if the id matches
+        for(Clothes clothes1 : clothes){
+            if (clothes1.getId() == id){
+                clothes.remove(clothes1);
+            }
+        }
+    }
 } //last

@@ -50,4 +50,13 @@ public class ClotheController {
         return clotheService.getSinglePieceOfClothing(clothes.getId());
     }
 
+    //delete a piece of clothing
+    //I need to target their ID
+    @DeleteMapping("clothes/{id}")
+    @ResponseBody
+    public String deletedClothing(@PathVariable long id){
+        clotheService.deleteClothes(id);
+        return "clothing removed";
+    }
+
 } //last

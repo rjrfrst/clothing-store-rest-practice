@@ -35,4 +35,7 @@ public class ClotheService {
         clotheRepository.updateClothing(clothes);
     }
 
+    public void deleteClothes(long id) {
+        clotheRepository.deleteClothes(id);
+    }
 } //last
