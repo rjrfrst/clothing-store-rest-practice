@@ -18,6 +18,11 @@ public class ClotheRepository {
             new Clothes(4, "Skirt", 1, List.of("Spring", "Summer"))
     ));
 
+    //add clothes
+    public void addClothes(Clothes newClothes){
+        clothes.add(newClothes);
+    }
+
     //all clothes
     public List<Clothes> getAllClothes() {
         return clothes;
@@ -28,11 +33,13 @@ public class ClotheRepository {
         //I want to check all the data and if it match return that data
         for(Clothes cloth : clothes)
         {
-            if(cloth.getId() == id);
-            return cloth;
+            if(cloth.getId() == id)
+                return cloth;
         }
         //if it doesn't match return nothing
         return null;
     }
+
+
 
 } //last

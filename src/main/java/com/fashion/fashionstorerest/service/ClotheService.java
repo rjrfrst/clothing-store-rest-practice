@@ -25,4 +25,9 @@ public class ClotheService {
         return clotheRepository.getSinglePieceOfClothing(id);
     }
 
+    //add a piece of clothing
+    public void addClothing(Clothes clothes){
+        clotheRepository.addClothes(clothes);
+    }
+
 } //last

@@ -20,4 +20,7 @@ public class Clothes {
     private int size;
     private List<String> season;
 
+    public void add(Clothes clothes) {
+
+    }
 } //last
