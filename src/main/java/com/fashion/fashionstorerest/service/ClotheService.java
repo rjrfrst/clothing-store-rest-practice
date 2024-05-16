@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ClotheService {
@@ -17,25 +18,26 @@ public class ClotheService {
 
     //get all clothes
     public List<Clothes> getAllClothes(){
-        return clotheRepository.getAllClothes();
+        return clotheRepository.findAll();
     }
 
     //get single clothing
     public Clothes getSinglePieceOfClothing(long id){
-        return clotheRepository.getSinglePieceOfClothing(id);
+        return clotheRepository.findById(id).orElse(new Clothes());
     }
 
     //add a piece of clothing
     public void addClothing(Clothes clothes){
-        clotheRepository.addClothes(clothes);
+        clotheRepository.save(clothes);
     }
 
     //update piece of clothing
     public void updateClothing(Clothes clothes){
-        clotheRepository.updateClothing(clothes);
+        clotheRepository.save(clothes);
     }
 
     public void deleteClothes(long id) {
-        clotheRepository.deleteClothes(id);
+        clotheRepository.deleteById(id);
     }
+
 } //last

@@ -1,5 +1,7 @@
 package com.fashion.fashionstorerest.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,9 +14,11 @@ import java.util.List;
 @NoArgsConstructor //default constructor
 @AllArgsConstructor //Constructor for all properties
 @Component
+@Entity
 public class Clothes {
 
     //properties
+    @Id
     private long id;
     private String clothingType;
     private int size;
