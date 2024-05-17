@@ -29,11 +29,15 @@ public class DataLoader implements ApplicationRunner {
         //insert a piece of clothing
         //save them afterward.
 
-        Clothes clothes1 = new Clothes(1, "T-shirt", 1, Arrays.asList("Spring", "Summer"));
-        Clothes clothes2 = new Clothes(2, "Shirt", 2, Arrays.asList("Spring", "Summer", "Fall", "Winter"));
+        Clothes clothes1 = new Clothes(1, "T-shirt", 1, Arrays.asList("Spring ", "Summer "));
+        Clothes clothes2 = new Clothes(2, "Shirt", 2, Arrays.asList("Spring ", "Summer ", "Fall ", "Winter "));
+        Clothes clothes3 = new Clothes(3, "Shorts", 1, Arrays.asList("Spring ", "Summer "));
+        Clothes clothes4 = new Clothes(4, "Skirt", 1, Arrays.asList("Spring ", "Summer "));
 
         clotheRepository.save(clothes1);
         clotheRepository.save(clothes2);
+        clotheRepository.save(clothes3);
+        clotheRepository.save(clothes4);
 
     }
 
