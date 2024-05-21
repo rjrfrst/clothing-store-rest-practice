@@ -23,6 +23,9 @@ public class StoreService {
         return storeRepository.findAll();
     }
 
+    public Store getSingularStore(long id){
+        return storeRepository.findById(id).orElse(new Store());
+    }
 
 
 } //last
