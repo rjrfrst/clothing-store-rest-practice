@@ -1,7 +1,9 @@
 package com.fashion.fashionstorerest.component;
 
 import com.fashion.fashionstorerest.model.Clothes;
+import com.fashion.fashionstorerest.model.Store;
 import com.fashion.fashionstorerest.repository.ClotheRepository;
+import com.fashion.fashionstorerest.repository.StoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -19,6 +21,9 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     ClotheRepository clotheRepository;
 
+    @Autowired
+    StoreRepository storeRepository;
+
     public DataLoader(){
 
     }
@@ -26,13 +31,20 @@ public class DataLoader implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception{
 
+
+        //Stores
+        Store storeOne = new Store("Happy-store", "Brazil, USA", 00000);
+        storeRepository.save(storeOne);
+
+        Store storeTwo = new Store("Yellow-store", "Oklahoma, USA", 00001);
+        storeRepository.save(storeTwo);
+
         //insert a piece of clothing
         //save them afterward.
-
-        Clothes clothes1 = new Clothes(1, "T-shirt", 1, Arrays.asList("Spring ", "Summer "));
-        Clothes clothes2 = new Clothes(2, "Shirt", 2, Arrays.asList("Spring ", "Summer ", "Fall ", "Winter "));
-        Clothes clothes3 = new Clothes(3, "Shorts", 1, Arrays.asList("Spring ", "Summer "));
-        Clothes clothes4 = new Clothes(4, "Skirt", 1, Arrays.asList("Spring ", "Summer "));
+        Clothes clothes1 = new Clothes(1, "T-shirt", 1, Arrays.asList("Spring ", "Summer "), storeOne);
+        Clothes clothes2 = new Clothes(2, "Shirt", 2, Arrays.asList("Spring ", "Summer ", "Fall ", "Winter "), storeOne);
+        Clothes clothes3 = new Clothes(3, "Shorts", 1, Arrays.asList("Spring ", "Summer "), storeOne);
+        Clothes clothes4 = new Clothes(4, "Skirt", 1, Arrays.asList("Spring ", "Summer "), storeTwo);
 
         clotheRepository.save(clothes1);
         clotheRepository.save(clothes2);
