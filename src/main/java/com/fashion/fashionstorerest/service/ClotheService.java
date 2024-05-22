@@ -36,6 +36,7 @@ public class ClotheService {
         clotheRepository.save(clothes);
     }
 
+    //delete a piece of clothing
     public void deleteClothes(long id) {
         clotheRepository.deleteById(id);
     }

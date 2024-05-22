@@ -23,9 +23,14 @@ public class StoreService {
         return storeRepository.findAll();
     }
 
+    //get a store
     public Store getSingularStore(long id){
         return storeRepository.findById(id).orElse(new Store());
     }
 
+    //delete a store
+    public void deleteStore(long id){
+        storeRepository.deleteById(id);
+    }
 
 } //last
