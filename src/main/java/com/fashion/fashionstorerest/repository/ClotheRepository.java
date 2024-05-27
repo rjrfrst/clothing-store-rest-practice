@@ -7,10 +7,13 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface ClotheRepository extends JpaRepository<Clothes, Long> {
 
+    //Derived query
+    Optional<Clothes> findByIdandStoreId(Long clothesId, Long storeId);
 
 } //last
 

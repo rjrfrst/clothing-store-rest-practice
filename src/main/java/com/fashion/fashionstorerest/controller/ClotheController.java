@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class ClotheController {
@@ -57,6 +58,22 @@ public class ClotheController {
     public String deletedClothing(@PathVariable long id){
         clotheService.deleteClothes(id);
         return "clothing removed";
+    }
+
+
+    //get a specific piece of clothing inside a store
+    @GetMapping("pieceOfClothing/{id}/store/{id}")
+    @ResponseBody
+    public String specificPieceOfClothingInsideAStore(
+            @PathVariable Long storeId,
+            @PathVariable Long clothesId) {
+        Optional<Clothes> clothing = clotheService.getSpecificClothingFromAStore(storeId, clothesId);
+
+        if(clothing.isPresent()){
+            return "clothing exists";
+        } else {
+            return "clothing not availabe";
+        }
     }
 
 } //last

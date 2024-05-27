@@ -6,13 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class StoreService {
 
-    //I want to display all the stores
-    //display a singular store
-    //get a specific clothing inside a store
+
     //delete a store
 
     @Autowired
@@ -32,5 +31,7 @@ public class StoreService {
     public void deleteStore(long id){
         storeRepository.deleteById(id);
     }
+
+
 
 } //last
