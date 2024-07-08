@@ -13,7 +13,7 @@ import java.util.Optional;
 public interface ClotheRepository extends JpaRepository<Clothes, Long> {
 
     //Derived query
-    Optional<Clothes> findByIdandStoreId(Long clothesId, Long storeId);
+//    Optional<Clothes> findByIdandStoreId(Long clothesId, Long storeId);
 
 } //last
 
