@@ -1,10 +1,11 @@
 package com.fashion.fashionstorerest.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Component
 @Entity
@@ -18,11 +19,19 @@ public class NormalUser {
     private String password;
     private Integer userContact;
 
+    //relationship with the address
+    //A user (or many users can have one address)
+    @OneToMany(mappedBy = "normaluser")
+    @JsonIgnoreProperties({"normaluser"})
+    private List<Address> addresses = new ArrayList<>();
+
+
     //parameterised constructor
     public NormalUser(String username, String password, Integer userContact) {
         this.username = username;
         this.password = password;
         this.userContact = userContact;
+        this.addresses = new ArrayList<>();
     }
 
     //default constructor
@@ -41,11 +50,9 @@ public class NormalUser {
     public String getUsername() {
         return username;
     }
-
     public void setUsername(String username) {
         this.username = username;
     }
-
     public String getPassword() {
         return password;
     }
@@ -60,5 +67,13 @@ public class NormalUser {
 
     public void setUserContact(Integer userContact) {
         this.userContact = userContact;
+    }
+
+    public List<Address> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(List<Address> addresses) {
+        this.addresses = addresses;
     }
 } //last
