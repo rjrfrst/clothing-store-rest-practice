@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class Address {
     //hello m8
     //nice one, project demo loading
-
+    // another one
     //properties
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
