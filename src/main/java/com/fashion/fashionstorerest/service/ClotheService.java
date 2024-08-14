@@ -42,8 +42,8 @@ public class ClotheService {
     }
 
     //get a specific piece of clothing inside a store
-    public Optional<Clothes> getSpecificClothingFromAStore(Long storeId, Long clothesId){
-        return clotheRepository.findByIdandStoreId(storeId, clothesId);
-    }
+//    public Optional<Clothes> getSpecificClothingFromAStore(Long storeId, Long clothesId){
+////        return clotheRepository.findByIdandStoreId(storeId, clothesId);
+//    }
 
 } //last
